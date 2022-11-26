@@ -57,7 +57,7 @@ const MovieDetail = () => {
       >
         <Grid container key={id} item xs={12} sm={6} md={4} lg={3}>
           {/* <Card  sx={{position:"relative",display:"flex", justifyContent:"end", alignItems:"center", flexDirection:"column"}}> */}
-          <Card id="hoverPlace" sx={{ position: "relative", backgroundColor:"grey" }}>
+          <Card id="hoverPlace" sx={{ position: "relative", backgroundColor:"grey", width:"360px", }}>
             <CardMedia
               component="img"
               alt="green iguana"

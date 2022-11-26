@@ -9,7 +9,8 @@ import React, { useContext } from "react";
 import { Box } from "@mui/material";
 import { useNavigate } from "react-router-dom";
 import { AuthContext } from "../contex/GlobalContext";
-
+import Hata from "../assets/hata.png"
+ 
 const MovieCard = ({ randomFilms }) => {
   const navigate = useNavigate();
   const { currentUser } = useContext(AuthContext);
@@ -34,8 +35,9 @@ const MovieCard = ({ randomFilms }) => {
           <Grid item container key={id} xs={12} sm={6} md={4} lg={3}>
 
             <Card
-              id="hoverPlace"
+             id="hoverPlace"
               sx={{
+                width:"360px",
                 position: "relative",
                 overflow: "hidden",
                 boxShadow: "5px 5px 5px 5px white",
@@ -44,10 +46,11 @@ const MovieCard = ({ randomFilms }) => {
               }}
             >
               <CardMedia
+              
                 component="img"
-                alt="green iguana"
+                alt="Foto Yüklenmedi"
                 height="480"
-                image={`https://image.tmdb.org/t/p/w1280${poster_path}`}
+                image={poster_path ? `https://image.tmdb.org/t/p/w1280${poster_path}`: `https://cdn.pixabay.com/photo/2014/04/03/00/28/ladybug-308408_960_720.png` }
               />
               <CardContent>
                 <Box
