@@ -81,14 +81,17 @@ export const SingInUser = (email,password,navigate, setError, setMessage) => {
 }
 
 
-export const LogoutSingUser = () => {
+export const LogoutSingUser = (navigate) => {
   signOut(auth)
   .then(() => {
     // Sign-out successful.
+    navigate("/")
+
   })
   .catch((error) => {
     // An error happened.
   });
+
 }
 
 

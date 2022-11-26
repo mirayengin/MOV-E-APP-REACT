@@ -7,6 +7,8 @@ import { useNavigate } from "react-router-dom";
 import { CreateUser, singWithGoogle } from "../auth/firebase";
 import { AuthContext } from "../contex/GlobalContext";
 
+
+
 const Register = () => {
   const navigate = useNavigate();
   const [firstName, setfirstName] = useState("");
@@ -15,91 +17,91 @@ const Register = () => {
   const [password, setPassword] = useState("");
   const { setCurrentUser } = useContext(AuthContext);
   const [message, setMessage] = useState("");
-  
+
   const handleCreate = (e) => {
-    e.preventDefault()
-    const displayName = `${firstName} ${lastName}`   
+    e.preventDefault();
+    const displayName = `${firstName} ${lastName}`;
 
-    console.log("displayName", displayName)
-    CreateUser(email, password, navigate, displayName,setCurrentUser,setMessage)
+    console.log("displayName", displayName);
+    CreateUser(
+      email,
+      password,
+      navigate,
+      displayName,
+      setCurrentUser,
+      setMessage
+    );
     // loginStatus()
-  }
+  };
 
-//?Google ile giriş
-  
+  //?Google ile giriş
+
   const handleGoogle = () => {
-    singWithGoogle(navigate)
-  }
-
-
-
-
-
-
-
-
+    singWithGoogle(navigate);
+  };
 
   return (
     <Box
-      sx={{ display: "flex", justifyContent: "center", alignItems: "center" }}
+      className="registerdiv"
+      sx={{
+        height: "90vh",
+        display: "flex",
+        justifyContent: "center",
+        alignItems: "center",
+      }}
     >
       <Box
         component="form"
         sx={{
           "& .MuiTextField-root": { m: 1, width: "25ch" },
         }}
-
       >
-        <Box component="form">
+        <Box sx={{display:"flex", justifyContent:"center" }}>
           <TextField
             required
-            
             onChange={(e) => setfirstName(e.target.value)}
             value={firstName}
-            sx={{ textAling: "center" }}
+            sx={{ textAling: "center",background:"white"}}
             error
             id="standard-error-helper-text"
             label="FirstName"
-            // helperText="Incorrect entry."
             variant="standard"
             type="text"
           />
         </Box>
-        <Box>
+        <Box sx={{display:"flex", justifyContent:"center" }}>
           <TextField
             required
             // warning="true"
             onChange={(e) => setLastName(e.target.value)}
             value={lastName}
-            sx={{ textAling: "center" }}
+            sx={{ textAling: "center",background:"white" }}
             error
             id="standard-error-helper-text1"
             label="LastName"
-            // helperText="Incorrect entry."
             variant="standard"
             type="text"
           />
         </Box>
-        <Box>
+        <Box sx={{display:"flex", justifyContent:"center" }}>
           <TextField
             required
             // warning="true"
             onChange={(e) => setEmail(e.target.value)}
             value={email}
-            sx={{ textAling: "center" }}
+            sx={{ textAling: "center",background:"white" }}
             error
             id="standard-error-helper-text2"
             label="Email"
-            // helperText="Incorrect entry."
             variant="standard"
             type="email"
           />
         </Box>
 
-        <Box>
+        <Box sx={{display:"flex", justifyContent:"center" }}>
           <TextField
             required
-            // warning="true"
+            error
             onChange={(e) => setPassword(e.target.value)}
             value={password}
             id="standard-error-helper-text3"
@@ -107,14 +109,15 @@ const Register = () => {
             helperText={message}
             variant="standard"
             type="password"
+            sx={{background:"white"}}
           />
         </Box>
 
         <Stack spacing={2} direction="row" mt={4} justifyContent="center">
-          <Button onClick={handleCreate} variant="contained" type="submit">
+          <Button sx={{backgroundColor:"crimson",fontWeight:"bold", "&:hover":{backgroundColor:"white", color:"crimson"}}} onClick={handleCreate} variant="contained" type="submit">
             CREATE ACCOUNT
           </Button>
-          <Button onClick={handleGoogle} variant="outlined">
+          <Button sx={{border:"solid 2px white", color:"crimson", "&:hover": {background:"crimson", color:"white", border:"none"}}} onClick={handleGoogle} variant="outlined">
             COUNTUNE WİTH GOOGLE
           </Button>
         </Stack>

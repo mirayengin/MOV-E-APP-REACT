@@ -2,9 +2,11 @@ import TextField from "@mui/material/TextField";
 import Box from "@mui/material/Box";
 import React, { useEffect, useState } from "react";
 import Button from "@mui/material/Button";
-import SendIcon from "@mui/icons-material/Send";
+// import SendIcon from "@mui/icons-material/Send";
 import MovieCard from "../components/MovieCard";
 import axios from "axios";
+import SearchIcon from '@mui/icons-material/Search';
+
 
 const Main = () => {
   const [selectInput, setSelectInput] = useState("");
@@ -35,10 +37,14 @@ const Main = () => {
   //!Search yaptığımızda 
   const handleSearch = () => {
     getSelectFilm()
+    setSelectInput("");
   }
+
+
   const getSelectFilm = async() => {
     const { data } = await axios(selectUrl);
     setRandomFilms(data.results);
+
   }
 
  
@@ -50,7 +56,7 @@ const Main = () => {
 
 
   return (
-    <>
+    <div className="mainDiv">
       <Box
         spacing={2}
         sx={{
@@ -58,29 +64,34 @@ const Main = () => {
           display: "flex",
           justifyContent: "center",
           alignItems: "center",
-          mt: 4,
+          pt: 4,
         }}
       >
         <TextField
           onChange={(e) => setSelectInput(e.target.value)}
-          size="small"
-          sx={{ width: "20%" }}
+          size="medium"
+          sx={{ width: "20%", border:"none", backgroundColor:"white", boxShadow:"1rem 1rem 1rem 3rem yellow" }}
           label="Search"
           type="search"
+          value={selectInput}
+          error
+          
         />
         <Button
-          sx={{ ml: 4, backgroundColor: "red" }}
+          className=""
+          sx={{ ml: 4, backgroundColor: "red", color:"white", fontWeight:"bold" ,boxShadow:"1rem 1rem 1rem 3rem yellow", "&:hover":{background:"white", color:"red"} }}
           size="large"
-          variant="contained"
-          endIcon={<SendIcon />}
+          // variant="contained"
+          endIcon={<SearchIcon />}
           onClick={handleSearch}
+        
         >
           Send
         </Button>
       </Box>
 
       <MovieCard randomFilms={randomFilms} />
-    </>
+    </div>
   );
 };
 
