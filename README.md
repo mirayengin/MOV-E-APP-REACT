@@ -14,7 +14,7 @@
 
 <hr>
 
-[📍You can see the live site from here!](https://reactmovieapp-five.vercel.app/)
+[📍You can see the live site from here!](https://mov-e-app-react.vercel.app/)
 
 <!-- ------------------------------------------------------ -->
 ````
