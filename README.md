@@ -14,7 +14,7 @@
 
 <hr>
 
-[📍You can see the live site from here!](https://mov-e-app-react.vercel.app/)
+### Check The Live Website ➡️ [Live Website](https://vercel.com/mirayengin/mov-e-app-react)
 
 <!-- ------------------------------------------------------ -->
 ````
@@ -88,7 +88,7 @@ SOLUTION
 <hr>
 <h3>How to Use the Project</h3>
 <span>First download a code editor </span>
-<br><span>Second open the files : </span><a href='https://github.com/yasinsutoglu/React-MovieApp'>My Docs</a>
+<br><span>Second open the files : </span><a href='https://github.com/mirayengin/MOV-E-APP-REACT'>My Docs</a>
 <br><span>You should open vscode terminal and write "yarn or npm install" to make the project alive </span>
 <br><span>You can use this tutorial : </span><a href='https://www.youtube.com/watch?v=fJEbVCrEMSE'>VS Code tutorial</a>
 
@@ -139,5 +139,5 @@ Feel free to check [issues page](https://github.com/kefranabg/readme-md-generato
 👤 **Erhan FIRAT**
 
 
-- Github: [@yasinsutoglu](https://github.com/mirayengin)
+- Github: [@erhanfirat](https://github.com/mirayengin)
 
